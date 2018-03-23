@@ -1,0 +1,162 @@
+/*
+    Pisay GWA promotional website
+    Copyright 2018- Jared Dantis.
+*/
+
+// Colors
+@ltbrey: #B0BEC5;
+@blrey:  #607d8b;
+@teal:   #263238;
+@yellow: #ffeb3b;
+@dkylow: #b3a52a;
+@white:  #fff;
+
+// Main styles
+*::before, *::after { box-sizing: border-box }
+html {
+    display: flex;
+    justify-content: center;
+}
+html, body {
+    margin: 0;
+    width: 100%;
+    background: @teal;
+}
+
+// Text styles
+h1, p, a {
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility !important;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+}
+h1, a {
+    font-family: -apple-system, BlinkMacSystemFont,
+                 'Segoe UI', 'Roboto', 'Oxygen-Sans',
+                 'Ubuntu', 'Cantarell', 'Helvetica Neue',
+                 sans-serif;
+}
+p {
+    font-family: Consolas, "Andale Mono WT", "Andale Mono",
+                 "Lucida Console", "Lucida Sans Typewriter",
+                 "DejaVu Sans Mono", "Bitstream Vera Sans Mono",
+                 "Liberation Mono", "Nimbus Mono L", Monaco,
+                 "Courier New", Courier, monospace;
+}
+h1, p, span { color: @white }
+a {
+    color: @blrey;
+    text-decoration: none;
+}
+a.button {
+    border: 2px solid @yellow;
+    background: @yellow;
+    color: @teal;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-right: -1px;
+    padding: .6rem .8rem;
+
+    &:hover {
+        background: @dkylow;
+        border-color: @dkylow;
+    }
+}
+
+// Header
+#head {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 4rem;
+    width: 100%;
+    background-color: @teal;
+
+    & > div {
+        display: inline-block;
+        float: left;
+        width: ~"calc(50% - 1.5rem)";
+        margin: 1.5rem 0;
+
+        img { height: 1.25rem }
+        &:first-child { margin-left: 1.5rem }
+        &:last-child {
+            text-align: right;
+            margin-right: 1.5rem;
+        }
+        a:hover { color: @ltbrey }
+    }
+}
+
+// Body
+body { max-width: 1000px }
+#body {
+    margin: 6rem 1.5rem 1.5rem;
+    text-align: center;
+    
+    #tagline {
+
+        h1 {
+            margin-bottom: 2rem;
+            font-weight: 100;
+            font-size: 6rem;
+        }
+        p {
+            margin: 0;
+            line-height: 1.75rem;
+            font-size: 1.25rem;
+        }
+    }
+
+    #dl {
+        margin: 3rem 0 5rem;
+
+        #android-dl {
+            background: @teal;
+            color: @yellow;
+            &:hover {
+                color: @dkylow;
+            }
+        }
+        a {
+            display: inline-block;
+            &:last-child {
+                margin-left: 1rem;
+            }
+        }
+    }
+
+    img {
+        max-width: 600px;
+        width: 100%;
+    }
+}
+
+// Footer
+#footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding-bottom: 4rem;
+
+    p {
+        color: @blrey;
+        font-size: .8rem;
+    }
+    span { color: @blrey }
+}
+
+// Media queries
+@media screen and (max-width: 800px) {
+    #body {
+        #tagline {
+            h1 { font-size: 4.5rem }
+            p { font-size: 1.15rem }
+        }
+        #dl a {
+            display: block;
+            &:first-child { margin-bottom: 2rem }
+            &:last-child { margin-left: 0 }
+        }
+    }
+}
