@@ -16,7 +16,7 @@ $(function(){
     var year = new Date().getFullYear();
     if (year > 2018)
         $('#year').text('-' + year);
-})
+});
 
 function updateApkUri() {
     var baseUri = 'https://api.github.com/repos/illustra/gwa-android/releases/latest';
